@@ -15,7 +15,7 @@ My goal is to make a program that can play noughts and crosses (tic tac toe) opt
 The way I went about making my program was a simple idea, but everything is easier said than done.
 Let us take a different game first. In this game two players alternate picking branches until we hit the base node of the tree in which that value is selected:
 
-*   P1 goes first and wants the highest score possible.					<img width="373" height="535" alt="image" src="https://github.com/user-attachments/assets/5937babe-67de-49f0-b595-27d65c6a2a0a" />
+*   P1 goes first and wants the highest score possible.					
 *   P2 goes second and wants the lowest score possible.
 
 In this game one strategy/algorithm we can use to play optimally is called minimax (min max). This is when a player picks the instance in which he maximizes his results even if the opponent was to play the most detrimental move towards him. Maximizing the yield under the assumption that the opponent plays perfectly (the best move from the opponent’s perspective).
@@ -24,14 +24,17 @@ In this scenario that would entail player one picking node c. This is because it
 
 Along with other limitations which I am sure I haven’t thought of one of the most major ones is of identical parental node values. For instance, if we were to change node b1’s value to 3. In this scenario node a and node b would be given the same value when it may be more beneficial to pick node b since the mistake the opponent could make may be more beneficial towards us. Moreover, another limitation is that this would not work for complex games where there are too many base nodes or in imperfect information games.
 
+<img width="373" height="535" alt="image" src="https://github.com/user-attachments/assets/5937babe-67de-49f0-b595-27d65c6a2a0a" />
+
 ## My method
 
 In my scenario I will have some function create a tree of all noughts and crosses positions and assign the ending nodes different values:
 
-*   1 for X winning.							<img width="533" height="495" alt="image" src="https://github.com/user-attachments/assets/bb777635-0645-47ef-8cda-7514f1d87b59" />
-
+*   1 for X winning.							
 *   -1 for O winning.
 *   0 for no one winning.
+  
+<img width="533" height="495" alt="image" src="https://github.com/user-attachments/assets/bb777635-0645-47ef-8cda-7514f1d87b59" />
 
 Then these values will be escalated like in the above game and a script will pick whichever it finds appropriate depending on if the computer is X or O. If it is X, it will pick the highest value while if its O it will pick the lowest values.
 
@@ -44,11 +47,10 @@ One reason this works is because there aren’t a lot of base nodes. However, in
 To avoid having a huge tree I considered rotation. What does that mean? When playing noughts and crosses on the first move you have 9 different possible position (squares) you can play. When writing these out it is evident that they are extremely similar, and some are the same board position just rotated. This can be utilized since now instead of having 9 starting nodes and paths to follow there are only 3. This greatly reduces the size of the tree.
 
 Here is an example:
-<img width="322" height="322" alt="image" src="https://github.com/user-attachments/assets/0badc990-9da8-4921-adf4-55248877c684" />			<img width="322" height="322" alt="image" src="https://github.com/user-attachments/assets/bf223528-a2b3-416a-8167-4c04d07f05cf" />
+<img width="322" height="322" alt="image" src="https://github.com/user-attachments/assets/0badc990-9da8-4921-adf4-55248877c684" />
+<img width="322" height="322" alt="image" src="https://github.com/user-attachments/assets/bf223528-a2b3-416a-8167-4c04d07f05cf" />
 
 
-
-![Rotation Example](path/to/rotation_image.png)
 
 ## Further increase in efficiency
 
