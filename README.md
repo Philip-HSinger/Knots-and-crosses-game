@@ -47,6 +47,7 @@ One reason this works is because there aren’t a lot of base nodes. However, in
 To avoid having a huge tree I considered rotation. What does that mean? When playing noughts and crosses on the first move you have 9 different possible position (squares) you can play. When writing these out it is evident that they are extremely similar, and some are the same board position just rotated. This can be utilized since now instead of having 9 starting nodes and paths to follow there are only 3. This greatly reduces the size of the tree.
 
 Here is an example:
+
 <img width="322" height="322" alt="image" src="https://github.com/user-attachments/assets/0badc990-9da8-4921-adf4-55248877c684" />
 <img width="322" height="322" alt="image" src="https://github.com/user-attachments/assets/bf223528-a2b3-416a-8167-4c04d07f05cf" />
 
